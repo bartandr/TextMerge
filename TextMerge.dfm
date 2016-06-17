@@ -15,47 +15,6 @@ object Main: TMain
   OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 13
-  object Panel1: TPanel
-    Left = 0
-    Top = 0
-    Width = 650
-    Height = 35
-    Align = alTop
-    TabOrder = 0
-    ExplicitTop = -8
-    object Button1: TButton
-      Left = 0
-      Top = 2
-      Width = 32
-      Height = 32
-      Caption = '1'
-      TabOrder = 0
-    end
-    object Button2: TButton
-      Left = 32
-      Top = 2
-      Width = 32
-      Height = 32
-      Caption = '2'
-      TabOrder = 1
-    end
-    object Button3: TButton
-      Left = 64
-      Top = 2
-      Width = 32
-      Height = 32
-      Caption = '3'
-      TabOrder = 2
-    end
-    object Button4: TButton
-      Left = 96
-      Top = 2
-      Width = 32
-      Height = 32
-      Caption = '4'
-      TabOrder = 3
-    end
-  end
   object LeftField: TRichEdit
     Left = 0
     Top = 33
@@ -66,15 +25,81 @@ object Main: TMain
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    Lines.Strings = (
-      'LeftField')
     ParentFont = False
     TabOrder = 1
     Zoom = 100
   end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 650
+    Height = 35
+    Align = alTop
+    TabOrder = 0
+    object Button1: TButton
+      Left = 0
+      Top = 2
+      Width = 50
+      Height = 32
+      Hint = 'Dedicated to left'
+      Caption = 'To left'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 48
+      Top = 2
+      Width = 50
+      Height = 32
+      Hint = 'Dedicated to right'
+      Caption = 'To Right'
+      TabOrder = 1
+      OnClick = Button2Click
+    end
+    object Button3: TButton
+      Left = 94
+      Top = 2
+      Width = 50
+      Height = 32
+      Hint = 'All Left'
+      Caption = 'All Left'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      OnClick = Button3Click
+    end
+    object Button4: TButton
+      Left = 142
+      Top = 2
+      Width = 50
+      Height = 32
+      Hint = 'All Right'
+      Caption = 'All Right'
+      TabOrder = 3
+      OnClick = Button4Click
+    end
+    object CheckButton: TButton
+      Left = 250
+      Top = 5
+      Width = 75
+      Height = 25
+      Caption = 'Check'
+      TabOrder = 4
+      OnClick = CheckButtonClick
+    end
+    object UnCheckButton: TButton
+      Left = 331
+      Top = 5
+      Width = 75
+      Height = 25
+      Caption = 'UnCheck'
+      TabOrder = 5
+      OnClick = UnCheckButtonClick
+    end
+  end
   object RightField: TRichEdit
     Left = 325
-    Top = 33
+    Top = 34
     Width = 325
     Height = 317
     Font.Charset = RUSSIAN_CHARSET
@@ -82,8 +107,6 @@ object Main: TMain
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    Lines.Strings = (
-      'RightField')
     ParentFont = False
     TabOrder = 2
     Zoom = 100
@@ -98,15 +121,7 @@ object Main: TMain
       end
       object Save1: TMenuItem
         Caption = 'Save'
-      end
-    end
-    object Edit1: TMenuItem
-      Caption = 'Edit'
-    end
-    object Help1: TMenuItem
-      Caption = 'Help'
-      object AbotTextMerge1: TMenuItem
-        Caption = 'Abot Text Merge'
+        OnClick = Save1Click
       end
     end
   end

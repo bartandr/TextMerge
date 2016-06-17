@@ -47,7 +47,7 @@ begin
   if OpenDialog1.Execute() then
    begin
     RightBrowse.Text:=OpenDialog1.FileName;
-    Textmerge.Main.RigthField.Lines.LoadFromFile(OpenDialog1.FileName);
+    Textmerge.Main.RightField.Lines.LoadFromFile(OpenDialog1.FileName);
    end;
 
 end;
